@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Penney's Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+        <script type="text/javascript">//<![CDATA[
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-75904-3']);
+          (function () {
+              var ga = document.createElement('script');
+              ga.type = 'text/javascript';
+              ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(ga, s);
+          })();
+        //]]></script>
+    </head>
+    <body>
+        <!--[if lte IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./">Penney's Game</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 80px;">
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span4">
+                    <h2>How to play</h2>
+                    <p>
+                      Call three coin flips (heads or tails). I'll choose three coin flips.
+                      Then I'll start flipping coins. Whoever's sequence comes up first, wins!
+                    </p>
+                    <h3>Your prediction</h3>
+                    <div id="you" class="text-center">
+                      <select id="you1"><option>Heads</option><option>Tails</option><select>
+                      <select id="you2"><option>Heads</option><option>Tails</option><select>
+                      <select id="you3"><option>Heads</option><option>Tails</option><select>
+                    </div>
+                    <p class="text-center">
+                      <a id="lets_play" class="btn btn-large btn-primary">Let's play!</a>
+                    </p>
+                    <h3>My prediction</h3>
+                    <div id="me" class="text-center">
+                      <input id="me1" type="text" disabled="disabled" readonly="readonly" value="???" />
+                      <input id="me2" type="text" disabled="disabled" readonly="readonly" value="???" />
+                      <input id="me3" type="text" disabled="disabled" readonly="readonly" value="???" />
+                    </div>
+                </div>
+                <div class="span5">
+                    <h2>Flips</h2>
+                    <div id="flips"></div>
+               </div>
+                <div class="span3">
+                  <div id="scores">
+                    <h2>Score</h2>
+                    <p>You've won <em id="wins">0</em> games.</p>
+                    <p>I've won <em id="losses">0</em> games.</p>
+                  </div>
+                  <div style="color: #aaa; margin-top: 4em; font-size: 80%;">
+                    <h3 style="font-size: 110%;">Keep losing?</h3>
+                    <div id="teaser">
+                      <p>
+                        You're probably losing more often than you're winning. The coin flips are fair, so
+                        there must be some other reason that you lose more often than you win.
+                      </p>
+                      <p>
+                        Try to work out why.
+                        <strong>After you've won 10 times (or lost 20 times), the answer will appear here.</strong>
+                      </p>
+                    </div>
+                    <div id="explanation" style="display: none;">
+                      <p>
+                        This game is unfair. But it's not the coin flips that are unfair (you can learn to
+                        play this game, and win, in real life, with a fair coin). What makes this game
+                        unfair is that <em>I look at your prediction before I make my own prediction</em>.
+                      </p>
+                      <p>
+                        To pick the most-extreme example: if you pick "heads, heads, heads", then I will pick
+                        "tails, heads, heads". This means that <em>so long as a tails comes up before
+                        three heads comes up</em>, then I <strong>will</strong> win, because there's no
+                        remaining combination of flips by which you'll win.
+                      </p>
+                      <p>
+                        Depending on your prediction, I will win between 2 and 7 times more often that you will.
+                      </p>
+                      <p>
+                        (if you've won a few games, then you've been lucky: but keep playing and your luck
+                        will run out, sooner or later!)
+                      <p>
+                        This is an example of a <em>non-transitive game</em>. You can learn more about the
+                        game, and how to play it for yourself, from
+                        <a href="https://en.wikipedia.org/wiki/Penney's_game">its article on Wikipedia</a>.
+                        Or you can learn more about non-transitive games in general, and about the author
+                        of this webpage, on
+                        <a href="http://scatmania.org/non-transitive-games">his blog post about it</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>
+                  &copy; <a href="http://www.scatmania.org/">Dan Q</a> 2013
+                  |
+                  <a href="http://scatmania.org/non-transitive-games">More about this game (and games like it)</a>
+                </p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/jquery.cookie.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

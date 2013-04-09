@@ -1,0 +1,12 @@
+select.hit, input.hit {
+    background: #9c9 !important;
+}
+
+#scores p {
+    font-size: 140%;
+}
+
+#scores p em {
+    font-weight: bold;
+    font-style: normal;
+}
